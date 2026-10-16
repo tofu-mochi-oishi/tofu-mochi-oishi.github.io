@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI伏せ字ガード – ChatGPT・Claude・Geminiに個人情報を送らないChrome拡張</title>
+<meta name="description" content="ChatGPT・Claude・Geminiに送る前に、氏名・電話番号・住所・マイナンバー・社名などを自動で伏せ字に。返答は画面上で元に戻して表示。処理はすべて端末内で、外部へは送信しません。">
+<link rel="canonical" href="https://tofu-mochi-oishi.github.io/ai-mask/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI伏せ字ガード – ChatGPT・Claude・Geminiに個人情報を送らないChrome拡張">
+<meta property="og:description" content="ChatGPT・Claude・Geminiに送る前に、氏名・電話番号・住所・マイナンバー・社名などを自動で伏せ字に。返答は画面上で元に戻して表示。処理はすべて端末内で、外部へは送信しません。">
+<meta property="og:url" content="https://tofu-mochi-oishi.github.io/ai-mask/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1e7d4f">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI伏せ字ガード","applicationCategory":"BrowserApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"url":"https://tofu-mochi-oishi.github.io/ai-mask/"}</script>
+</head>
+<body class="theme-green">
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../">tofu-mochi-oishi <span>小さく安全なChrome拡張</span></a>
+  <nav><a href="../ai-mask/">AI伏せ字ガード</a><a href="../save-image-as/">Save Image As</a></nav>
+</div></header>
+<main>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <img class="icon" src="icon.png" alt="" width="64" height="64">
+    <span class="eyebrow">ChatGPT・Claude・Gemini 対応</span>
+    <h1><span class="nw">AIに送る前に、</span><span class="nw">個人情報を</span><span class="nw">自動で伏せ字に。</span></h1>
+    <p class="lead">氏名・電話番号・住所・マイナンバー・社名などを、送信の直前に【氏名1】のような記号へ置き換えます。AIの返答は、あなたの画面でだけ元の値に戻して表示します。</p>
+    <div class="actions"><span class="btn btn-primary" aria-disabled="true">Chromeウェブストアで審査中</span><a class="btn btn-ghost" href="https://github.com/tofu-mochi-oishi/ai-mask">ソースコード</a><p class="note">審査が終わりしだい、ここからインストールできるようになります。</p></div>
+  </div>
+  <img class="shot" src="screenshot-1.png" alt="入力欄の個人情報に下線が引かれ、AIには【氏名1】様（【電話番号1】）のように届く様子" width="1280" height="800">
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>使い方は、いつもどおり送信するだけ</h2>
+  <ol class="steps">
+    <li><b>入力する</b>個人情報らしき箇所に下線が引かれ、画面の右下に件数が出ます。</li>
+    <li><b>送信する</b>Enterキーか送信ボタンで送ると、記号に置き換えてから送信されます。</li>
+    <li><b>読む・コピーする</b>返答の記号は元の値で表示されます。コピーボタンでも元の値のままです。</li>
+  </ol>
+</div></section>
+
+<section class="block"><div class="wrap two">
+  <div>
+    <h2>AIの返答は、元の値で読める</h2>
+    <p>AIには「【氏名1】様」と届き、AIも記号のまま答えます。拡張機能はその記号を、あなたの画面の上でだけ「山田太郎様」に戻します。記号と元の値の対応表はブラウザのメモリにだけ置かれ、ブラウザを閉じると消えます。</p>
+  </div>
+  <img class="shot" src="screenshot-2.png" alt="AIの返答の中の記号が、山田太郎様や電話番号など元の値で表示されている画面" width="1280" height="800" loading="lazy">
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>見つける情報</h2>
+  <table>
+    <tr><th>種類</th><th>見つけ方</th></tr>
+    <tr><td>マイナンバー・法人番号</td><td>桁数とチェックデジットで確認（ただの数字の並びは対象外）</td></tr>
+    <tr><td>クレジットカード番号</td><td>Luhnアルゴリズムで確認</td></tr>
+    <tr><td>電話番号・メールアドレス・郵便番号・住所</td><td>全角数字やハイフンの違いも吸収して検出</td></tr>
+    <tr><td>氏名</td><td>「氏名：」「担当：」などの項目名や、「〇〇様」などの敬称から判断</td></tr>
+    <tr><td>登録した語</td><td>社名・顧客名・案件名など、自動では見つけにくい語を設定画面で登録（20語まで）</td></tr>
+  </table>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>安心して使えるように</h2>
+  <div class="grid">
+    <div class="card"><h3>端末の中だけで処理</h3><p>開発者のサーバーを含め、外部へは一切送信しません。</p></div>
+    <div class="card"><h3>広告・解析なし</h3><p>アクセス解析・広告・トラッキングは入っていません。このサイトにもありません。</p></div>
+    <div class="card"><h3>最小限の権限</h3><p>使うのは保存機能と、対応する3つのAIサイトだけです。</p></div>
+    <div class="card"><h3>対応表は自動で消える</h3><p>記号と元の値の対応は、ブラウザを閉じると消えます。</p></div>
+    <div class="card"><h3>ソースコード公開</h3><p>中身は <a href="https://github.com/tofu-mochi-oishi/ai-mask">GitHub</a> で誰でも確認できます。</p></div>
+    <div class="card"><h3>オンオフはワンクリック</h3><p>ツールバーのアイコンから、いつでも無効にできます。</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>正直にお伝えしたいこと</h2>
+  <div class="caution"><ul>
+    <li>送信前の「うっかり」を減らす補助ツールです。すべての個人情報を確実に見つけられるわけではありません。</li>
+    <li>ファイル・画像のアップロードや、音声入力の内容は対象外です。</li>
+    <li>ブラウザを閉じた後に過去の会話を開くと、記号のまま表示されます。</li>
+    <li>AIサイトの画面が変わると、一時的に動かなくなることがあります。毎日自動でチェックし、見つけしだい直します。</li>
+  </ul></div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>よくある質問</h2>
+  <details><summary>AIは記号のままで、ちゃんと答えられますか？</summary><p>はい。伏せ字にしたメッセージの末尾に「記号は伏せ字にした実在の情報です」という短い注記を自動で付けるので、AIは記号を空欄と誤解せず、そのまま使って答えます。注記はあなたの画面には表示されません。設定で外すこともできます。</p></details>
+  <details><summary>会社で使っても大丈夫ですか？</summary><p>拡張機能そのものは外部と通信しないため、社内の情報が開発者に渡ることはありません。ただし、AIサービスの利用自体については、お勤め先の規程に従ってください。</p></details>
+  <details><summary>誤って伏せ字になる語があります。</summary><p>設定画面の「伏せ字にしない語」に登録すると、その語は置き換えなくなります。自社名や、公開している代表電話番号などにお使いください。</p></details>
+  <details><summary>料金はかかりますか？</summary><p>無料です。</p></details>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="actions"><span class="btn btn-primary" aria-disabled="true">Chromeウェブストアで審査中</span><a class="btn btn-ghost" href="privacy/">プライバシーポリシー</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <span>© 2026 tofu-mochi-oishi</span>
+  <span>お問い合わせ: <a href="mailto:nabesukishahu@gmail.com">nabesukishahu@gmail.com</a> · <a href="https://github.com/tofu-mochi-oishi">GitHub</a></span>
+</div></footer>
+</body>
+</html>
